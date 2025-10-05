@@ -1,4 +1,3 @@
-//import { MongoLib } from "./lib/mongo.js"; 
 import app from "./app.js";
 import { PORT } from "./config.js";
 
