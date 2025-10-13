@@ -3,7 +3,7 @@ import connection from "../../lib/db.js";
 export const crearDatos = (req, res, next) => {
   console.log("🚀 ~ crearDatos ~ req:", req.body.nombre);
 
-  console.log("He ingresado a la función crearDatos");
+  console.log("He ingresado a la función crearDatos!");
   // res.json({ mensaje: "Funcion crear datos" });
   // res.status(203).json({message:"He ingresado al controlador crear datos"})
   res.status(203).json({ message: req.body });
