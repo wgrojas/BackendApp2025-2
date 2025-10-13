@@ -4,7 +4,7 @@ import pkg from "express-validator";
 
 const app = express();
 import functionRoutes from "./src/routers/funciones.routes.js"
-//const { body, query, validationResult, ExpressValidator } = pkg;
+const { body, query, validationResult, ExpressValidator } = pkg;
 
 app.use(cors({ origin: "*" }));
 

@@ -3,7 +3,7 @@ import {
   consultarDatos,
   eliminarDatos,
   actualizarDatos,
-} from "../controllers/funciones.controller";
+} from "../controllers/funciones.controller.js";
 import { Router } from "express";
 const router = Router();
 
