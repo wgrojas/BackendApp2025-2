@@ -55,11 +55,44 @@ export const crearDatos = (req, res, next) => {
   });
 };
 
-/*FUNCIÓN: consultarDatos(Por ahora solo muestra un mensaje en consola)*/
+
+/* FUNCIÓN: consultarDatos
+   Esta función consulta todos los proveedores guardados
+   en la base de datos y los devuelve al frontend en formato JSON.*/
 export const consultarDatos = (req, res, next) => {
   console.log("He ingresado a la función consultarDatos!");
-  res.status(200).json({ message: "Consulta realizada correctamente" });
+
+  // Consulta SQL para traer todos los proveedores
+  const sql = "SELECT * FROM proveedor";
+
+  // Ejecuto la consulta
+  connection.query(sql, (err, results) => {
+    if (err) {
+      // Si hay un error, lo muestro en consola y respondo con error
+      console.error("Error al consultar los proveedores:", err);
+      return res.status(500).json({ error: "Error al consultar los datos." });
+    }
+
+    // Si no hay error, verifico si hay registros
+    if (results.length === 0) {
+      console.log("No hay proveedores registrados en la base de datos.");
+      return res.status(200).json({
+        message: "No hay proveedores registrados.",
+        data: [],
+      });
+    }
+
+    // Si hay resultados, los muestro en consola y los envío al frontend
+    console.log("Proveedores encontrados:", results.length);
+    return res.status(200).json({
+      message: "Consulta realizada correctamente",
+      total: results.length,
+      data: results,
+    });
+  });
 };
+
+
 
 /*  FUNCIÓN: eliminarDatos(En el futuro eliminará un proveedor por su ID)*/
 export const eliminarDatos = (req, res, next) => {
