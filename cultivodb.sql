@@ -1,10 +1,10 @@
 CREATE TABLE `Producto` (
   `id_producto` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(50) NOT NULL,
-  `vlr_unit` FLOAT(10,2) NOT NULL, -- Aumenté la precisión
+  `vlr_unit` FLOAT(10,2) NOT NULL, -- 
   `categoria` VARCHAR(50) DEFAULT NULL,
   `referencia` VARCHAR(20) UNIQUE NOT NULL,
-  `created_at` DATE DEFAULT (CURRENT_DATE), -- 'now()' no funciona en DEFAULT de tipo DATE
+  `created_at` DATE DEFAULT (CURRENT_DATE), 
   PRIMARY KEY (`id_producto`)
 );
 

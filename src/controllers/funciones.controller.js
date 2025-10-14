@@ -55,7 +55,6 @@ export const crearDatos = (req, res, next) => {
   });
 };
 
-
 /* FUNCIÓN: consultarDatos
    Esta función consulta todos los proveedores guardados
    en la base de datos y los devuelve al frontend en formato JSON.*/
@@ -91,8 +90,6 @@ export const consultarDatos = (req, res, next) => {
     });
   });
 };
-
-
 
 /*  FUNCIÓN: eliminarDatos(En el futuro eliminará un proveedor por su ID)*/
 export const eliminarDatos = (req, res, next) => {
